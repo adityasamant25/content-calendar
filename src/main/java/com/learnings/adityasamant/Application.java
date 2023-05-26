@@ -1,4 +1,4 @@
-package com.example.contentcalendar;
+package com.learnings.adityasamant;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
