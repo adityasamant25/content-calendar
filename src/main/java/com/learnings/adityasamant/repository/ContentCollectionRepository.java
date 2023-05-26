@@ -28,10 +28,16 @@ public class ContentCollectionRepository {
         return contents.stream().filter(c -> c.id().equals(id)).findFirst();
     }
 
+
+    public void save(Content content) {
+        contents.add(content);
+    }
+
     @PostConstruct
     private void init(){
         Content content = new Content(1, "My First Blog Post", "My First Blog Post",
                 Status.IDEA, Type.ARTICLE, LocalDateTime.now(), null, "");
         contents.add(content);
     }
+
 }
