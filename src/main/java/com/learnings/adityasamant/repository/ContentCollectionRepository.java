@@ -30,6 +30,7 @@ public class ContentCollectionRepository {
 
 
     public void save(Content content) {
+        contents.removeIf(c -> c.id().equals(content.id()));
         contents.add(content);
     }
 
@@ -40,4 +41,11 @@ public class ContentCollectionRepository {
         contents.add(content);
     }
 
+    public boolean existsById(Integer id) {
+        return contents.stream().filter(c -> c.id().equals(id)).count() == 1;
+    }
+
+    public void deleteById(Integer id) {
+        contents.removeIf(c -> c.id().equals(id));
+    }
 }
