@@ -34,7 +34,7 @@ public class ContentJdbcController {
     @ResponseStatus(HttpStatus.CREATED)
     @PostMapping("")
     public void create(@Valid @RequestBody Content content) {
-        repository.createContent(content.title(), content.desc(), content.status().name(), content.contentType().name(), content.url());
+        repository.createContent(content.title(), content.description(), content.status().name(), content.contentType().name(), content.url());
     }
 
     @ResponseStatus(HttpStatus.NO_CONTENT)
@@ -43,7 +43,7 @@ public class ContentJdbcController {
         if (repository.getContent(id) == null) {
             throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Content not found!");
         }
-        repository.updateContent(content.id(), content.title(), content.desc(), content.status().name(), content.contentType().name(), content.url());
+        repository.updateContent(content.id(), content.title(), content.description(), content.status().name(), content.contentType().name(), content.url());
     }
 
     @ResponseStatus(HttpStatus.NO_CONTENT)
