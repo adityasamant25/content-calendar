@@ -21,12 +21,4 @@ public class Application {
 		SpringApplication.run(Application.class, args);
 	}
 
-	@Bean
-	CommandLineRunner commandLineRunner(ContentRepository repository) {
-		return args -> {
-			Content content = new Content(null,"Hello Chat GPT", "All about Chat GPT",
-					Status.IDEA, Type.VIDEO, LocalDateTime.now(), null, "");
-			repository.save(content);
-		};
-	}
 }
